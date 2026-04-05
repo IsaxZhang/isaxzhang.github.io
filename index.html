@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isabelle Zhang</title>
+  <meta name="description" content="Isabelle Zhang, SJD Candidate at the University of Virginia School of Law. Corporate finance and securities regulation.">
+  <meta name="author" content="Isabelle Zhang">
+
+  <meta property="og:title" content="Isabelle Zhang">
+  <meta property="og:description" content="SJD Candidate, University of Virginia School of Law">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://isabelle-zhang.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-text: #1a1a1a;
+      --color-text-soft: #4a4a4a;
+      --color-text-muted: #757575;
+      --color-bg: #fdfdfc;
+      --color-border: #e5e5e0;
+      --color-accent: #7a1f2b;
+      --font-serif: "EB Garamond", Georgia, "Times New Roman", serif;
+      --font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+      --content-width: 780px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--color-text);
+      background: var(--color-bg);
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── Navigation ── */
+    nav.top-nav {
+      padding: 28px 0 20px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    nav.top-nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    nav.top-nav .site-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+    nav.top-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    nav.top-nav a {
+      color: var(--color-text-soft);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+    nav.top-nav a:hover { color: var(--color-accent); }
+
+    /* ── Hero ── */
+    section.hero {
+      text-align: center;
+      padding: 64px 0 48px 0;
+    }
+    section.hero img.headshot {
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 32px auto;
+      display: block;
+      border: 1px solid var(--color-border);
+    }
+    section.hero h1 {
+      font-family: var(--font-serif);
+      font-size: 44px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+      color: var(--color-text);
+      line-height: 1.15;
+    }
+    section.hero .role {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--color-text-soft);
+      margin-bottom: 2px;
+    }
+    section.hero .institution {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--color-text-soft);
+      margin-bottom: 28px;
+    }
+    section.hero .education-list {
+      font-size: 14.5px;
+      color: var(--color-text-muted);
+      line-height: 1.9;
+    }
+
+    /* ── Content sections ── */
+    section.content {
+      padding: 56px 0;
+      border-top: 1px solid var(--color-border);
+    }
+    section.content h2 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+      color: var(--color-text);
+    }
+    section.content h3 {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--color-text-muted);
+      margin-bottom: 22px;
+      margin-top: 44px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    section.content h3:first-of-type { margin-top: 0; }
+    section.content p {
+      margin-bottom: 18px;
+      color: var(--color-text);
+      line-height: 1.75;
+    }
+    section.content p:last-child { margin-bottom: 0; }
+    section.content a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(122, 31, 43, 0.3);
+      transition: border-color 0.2s ease;
+    }
+    section.content a:hover { border-bottom-color: var(--color-accent); }
+
+    /* ── Paper entries ── */
+    .paper { margin-bottom: 32px; }
+    .paper:last-child { margin-bottom: 0; }
+
+    .paper .paper-title {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 5px;
+      color: var(--color-text);
+      font-style: italic;
+    }
+    .paper .paper-meta {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 4px;
+    }
+    .paper .paper-media {
+      font-size: 13.5px;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+    }
+    .paper .paper-media strong {
+      font-weight: 600;
+      color: var(--color-text-soft);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Button links row ── */
+    .paper-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .paper-actions a,
+    .paper-actions button {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-accent);
+      background: rgba(122, 31, 43, 0.06);
+      border: 1px solid rgba(122, 31, 43, 0.15);
+      padding: 5px 14px;
+      border-radius: 3px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .paper-actions a:hover,
+    .paper-actions button:hover {
+      background: rgba(122, 31, 43, 0.12);
+      border-color: rgba(122, 31, 43, 0.3);
+      border-bottom-style: solid;
+    }
+
+    /* ── Collapsible abstract ── */
+    .paper-abstract-wrap {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .paper-abstract-wrap.open {
+      max-height: 800px;
+    }
+    .paper-abstract-text {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--color-text-soft);
+      padding: 14px 0 6px 0;
+      border-left: 3px solid var(--color-border);
+      padding-left: 16px;
+      margin-top: 6px;
+    }
+
+    /* ── Presentations page ── */
+    .pres-group { margin-bottom: 36px; }
+    .pres-group:last-child { margin-bottom: 0; }
+    .pres-group .pres-paper-title {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--color-text);
+      margin-bottom: 10px;
+    }
+    .pres-list {
+      list-style: none;
+      padding: 0;
+    }
+    .pres-list li {
+      margin-bottom: 6px;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.55;
+      color: var(--color-text-soft);
+      font-size: 14.5px;
+    }
+    .pres-list li::before {
+      content: "·";
+      position: absolute;
+      left: 4px;
+      color: var(--color-text-muted);
+      font-weight: 700;
+    }
+
+    /* ── Teaching list ── */
+    ul.clean-list {
+      list-style: none;
+      padding: 0;
+    }
+    ul.clean-list li {
+      margin-bottom: 10px;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.6;
+      color: var(--color-text-soft);
+      font-size: 15px;
+    }
+    ul.clean-list li::before {
+      content: "·";
+      position: absolute;
+      left: 4px;
+      color: var(--color-text-muted);
+      font-weight: 700;
+    }
+
+    /* ── Contact table ── */
+    .contact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    .contact-table td {
+      padding: 6px 0;
+      color: var(--color-text-soft);
+      vertical-align: top;
+    }
+    .contact-table td:first-child {
+      width: 110px;
+      color: var(--color-text-muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      padding-top: 9px;
+    }
+
+    .external-links {
+      margin-top: 24px;
+      font-size: 14px;
+    }
+    .external-links a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(122, 31, 43, 0.3);
+      margin-right: 18px;
+    }
+    .external-links a:hover { border-bottom-color: var(--color-accent); }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 0 60px 0;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      nav.top-nav { padding: 20px 0 16px 0; }
+      nav.top-nav ul { gap: 16px; }
+      nav.top-nav a { font-size: 14px; }
+      section.hero { padding: 40px 0 32px 0; }
+      section.hero h1 { font-size: 32px; }
+      section.hero .role,
+      section.hero .institution { font-size: 17px; }
+      section.hero img.headshot { width: 140px; height: 140px; }
+      section.content { padding: 40px 0; }
+      section.content h2 { font-size: 24px; }
+      .paper .paper-title { font-size: 17px; }
+      .contact-table td:first-child { width: 86px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="container">
+      <a href="#" class="site-title">Isabelle Zhang</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#presentations">Presentations</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════ -->
+  <section class="hero" id="top">
+    <div class="container">
+      <img src="headshot.jpeg" alt="Isabelle Zhang" class="headshot">
+      <h1>Isabelle Zhang</h1>
+      <div class="role">SJD Candidate</div>
+      <div class="institution">University of Virginia School of Law</div>
+      <div class="education-list">
+        <div>SJD, University of Virginia School of Law, 2021 &ndash; present</div>
+        <div>JSM, Stanford Law School, 2021</div>
+        <div>Juris Master, Peking University Law School, 2017</div>
+        <div>BA in Philosophy (Logic &amp; Computation), Sun Yat-sen University, 2014</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       ABOUT
+       ════════════════════════════════════════════ -->
+  <section class="content" id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>
+        I am an SJD candidate at the University of Virginia School of Law, where my research focuses on corporate finance and securities regulation. My recent work examines cross-border securities enforcement, private placement disclosure, and the effects of public venture capital on entrepreneurship. My work has been published in the <em>Journal of Empirical Legal Studies</em> and is forthcoming in the <em>Berkeley Business Law Journal</em>. In recent work, I revisit the bonding hypothesis in <em>Legalism without Information: Foreign Issuers, U.S. Enforcement, and the Limits of Bonding</em>, which examines the SEC&rsquo;s 2025 Concept Release on Foreign Private Issuers. My dissertation is supervised by Professor Paul G. Mahoney.
+      </p>
+      <p>
+        Before entering academia, I was an associate at Affinity Equity Partners, a pan-Asian private equity firm, and practiced with Simpson Thacher &amp; Bartlett&rsquo;s mergers and capital markets group. I hold a JSM from Stanford Law School, a Juris Master from Peking University Law School (China National Scholarship, top 0.2%), and a BA in philosophy (concentration in logic and computation) from Sun Yat-sen University.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       RESEARCH
+       ════════════════════════════════════════════ -->
+  <section class="content" id="research">
+    <div class="container">
+      <h2>Research</h2>
+
+      <!-- ── Publications ── -->
+      <h3>Publications</h3>
+
+      <div class="paper">
+        <div class="paper-title">Government Venture Capital and Entrepreneurship: Evidence from China</div>
+        <div class="paper-meta"><em>Journal of Empirical Legal Studies</em>, vol. 22, no. 4 (2025)</div>
+        <div class="paper-media"><strong>Media:</strong> European Corporate Governance Institute Blog, Oxford Business Law Blog</div>
+        <div class="paper-actions">
+          <button onclick="toggleAbstract(this)">Abstract &#9656;</button>
+          <a href="https://doi.org/10.1111/jels.70011" target="_blank" rel="noopener">Journal</a>
+          <a href="https://www.ecgi.global/publications/blog/the-hidden-tradeoff-in-public-venture-capital-lessons-from-chinas-gvc-boom" target="_blank" rel="noopener">ECGI Blog</a>
+          <a href="https://blogs.law.ox.ac.uk/oblb/blog-post/2025/10/hidden-trade-public-venture-capital" target="_blank" rel="noopener">Oxford BLB</a>
+        </div>
+        <div class="paper-abstract-wrap">
+          <div class="paper-abstract-text">
+            Government venture capital funds (GVCs) are a global phenomenon. GVCs are central players in China&rsquo;s VC market, now the second largest globally. While existing literature often depicts China&rsquo;s GVCs as a successful public effort to promote entrepreneurship, this paper presents an alternative view. It explores the effect of city-level GVC programs on entrepreneurship, as proxied by the formation of new businesses. Using a hand-collected 20-year dataset covering GVC program adoption, early-stage investments, and new firm formation in 280 prefectural cities and employing difference-in-differences and weighted stacked event study methods, I find that Chinese GVCs are associated with a decrease in overall new firm formation. Interview-based evidence and a triple-differences analysis by industrial sector suggest that this result is driven by stringent investment restrictions imposed by GVC programs, which absorb private sector capital into GVC funds targeting specific industries, thereby discouraging new firm formation in non-policy-supported sectors. These findings offer a cautionary note to global policymakers regarding the complexities of public finance strategies aimed at boosting entrepreneurship.
+          </div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">TikTok v. Garland: U.S. Regulators and the New Corporate Control Frontier</div>
+        <div class="paper-meta"><em>Berkeley Business Law Journal</em>, vol. 23, no. 1 (forthcoming 2026)</div>
+        <div class="paper-actions">
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5385901" target="_blank" rel="noopener">SSRN</a>
+        </div>
+      </div>
+
+      <!-- ── Working Papers ── -->
+      <h3>Working Papers</h3>
+
+      <div class="paper">
+        <div class="paper-title">Legalism without Information: Foreign Issuers, U.S. Enforcement, and the Limits of Bonding</div>
+        <div class="paper-meta">Complete draft available upon request</div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Evidence from Private Placement Memoranda</div>
+        <div class="paper-meta">with Colleen Honigsberg and Edwin Hu</div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Venture Capital Contracting around Sovereignty</div>
+        <div class="paper-meta">Invited book chapter, draft in progress</div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Re-engineering the Venture Capital and Private Equity Market: Lessons from Stock Market Exits</div>
+        <div class="paper-meta">Complete draft available upon request</div>
+      </div>
+
+      <!-- ── Policy Commentary ── -->
+      <h3>Policy Commentary</h3>
+
+      <div class="paper">
+        <div class="paper-title">The Hidden Tradeoff in Public Venture Capital</div>
+        <div class="paper-meta">European Corporate Governance Institute Blog (July 2025); Oxford Business Law Blog (October 2025)</div>
+        <div class="paper-actions">
+          <a href="https://www.ecgi.global/publications/blog/the-hidden-tradeoff-in-public-venture-capital-lessons-from-chinas-gvc-boom" target="_blank" rel="noopener">ECGI Blog</a>
+          <a href="https://blogs.law.ox.ac.uk/oblb/blog-post/2025/10/hidden-trade-public-venture-capital" target="_blank" rel="noopener">Oxford BLB</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       PRESENTATIONS
+       ════════════════════════════════════════════ -->
+  <section class="content" id="presentations">
+    <div class="container">
+      <h2>Presentations</h2>
+
+      <div class="pres-group">
+        <div class="pres-paper-title">Legalism without Information</div>
+        <ul class="pres-list">
+          <li>American Law and Economics Association Annual Conference, University of Chicago (2026)</li>
+          <li>Stanford Law and Empirical Research Workshop, Stanford Law School (2026)</li>
+          <li>Wharton Financial Regulation Annual Conference, University of Pennsylvania (2026)</li>
+          <li>Michigan Law Junior Scholar Conference, University of Michigan School of Law (2026)</li>
+          <li>National Business Law Scholars Annual Conference, William S. Boyd School of Law (2026)</li>
+          <li>Law and Society Annual Conference, Corporate and Securities Panel, San Francisco (2026)</li>
+          <li>Colloquium Workshop, University of Virginia Law School (2026)</li>
+          <li>Cornell Law School Young Empirical Scholar Workshop (2025)</li>
+        </ul>
+      </div>
+
+      <div class="pres-group">
+        <div class="pres-paper-title">Government Venture Capital and Entrepreneurship: Evidence from China</div>
+        <ul class="pres-list">
+          <li>The Law and Finance of Private Equity and Venture Capital, London School of Economics and Political Science (2025)</li>
+          <li>Corporate Law and Governance Cluster, Chinese University of Hong Kong (2025)</li>
+          <li>National Business Law Scholars Conference, UCLA Law School (2025)</li>
+          <li>Conference on Empirical Legal Studies, Emory Law School (2024)</li>
+          <li>Yale Asian Law Junior Scholars Workshop, Yale Law School (2024)</li>
+          <li>Law and Entrepreneurship Association Annual Retreat, UC Law San Francisco (2024)</li>
+          <li>Colloquium Workshop, University of Virginia Law School (2023)</li>
+        </ul>
+      </div>
+
+      <div class="pres-group">
+        <div class="pres-paper-title">TikTok v. Garland: U.S. Regulators and the New Corporate Control Frontier</div>
+        <ul class="pres-list">
+          <li>Law and Society Annual Conference, Chicago (2025)</li>
+          <li>APALSA Law Review Annual Conference, University of Pennsylvania Carey Law School (2025)</li>
+          <li>Colloquium Workshop, University of Virginia Law School (2024)</li>
+        </ul>
+      </div>
+
+      <div class="pres-group">
+        <div class="pres-paper-title">Re-engineering the Venture Capital and Private Equity Market: Lessons from Stock Market Exits</div>
+        <ul class="pres-list">
+          <li>Legal Studies Workshop, Stanford Law School (2021)</li>
+          <li>Empirical Research Methods Workshop, Stanford Law School (2021)</li>
+        </ul>
+      </div>
+
+      <div class="pres-group">
+        <div class="pres-paper-title">Other Invited Conferences</div>
+        <ul class="pres-list">
+          <li>Law and Macroeconomic Annual Conference, New York University School of Law (2025)</li>
+          <li>Law and Entrepreneurship Association Annual Retreat, Cardozo School of Law (2025)</li>
+          <li>The Law and Finance of Private Equity and Venture Capital, University of Pennsylvania Carey Law School (2024)</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       TEACHING & SERVICE
+       ════════════════════════════════════════════ -->
+  <section class="content" id="teaching">
+    <div class="container">
+      <h2>Teaching and Service</h2>
+
+      <h3>Teaching</h3>
+      <ul class="clean-list">
+        <li>Corporate Finance (with Professor George Geis), University of Virginia School of Law, 2026</li>
+      </ul>
+
+      <h3>Service</h3>
+      <ul class="clean-list">
+        <li>Manuscript referee, <em>Journal of Empirical Legal Studies</em>; <em>Journal of Law &amp; Empirical Analysis</em></li>
+        <li>Panel Chair, Corporate and Securities Law, Law and Society Annual Conference</li>
+        <li>Discussant, Conference on Empirical Legal Studies, Emory Law School, 2024</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       CONTACT
+       ════════════════════════════════════════════ -->
+  <section class="content" id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <table class="contact-table">
+        <tr>
+          <td>Email</td>
+          <td><a href="mailto:xz2uy@virginia.edu">xz2uy@virginia.edu</a></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>University of Virginia School of Law<br>580 Massie Road<br>Charlottesville, VA 22903</td>
+        </tr>
+      </table>
+      <div class="external-links">
+        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7751027" target="_blank" rel="noopener">SSRN</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Isabelle Zhang</p>
+    </div>
+  </footer>
+
+  <!-- ── Abstract toggle ── -->
+  <script>
+    function toggleAbstract(btn) {
+      var wrap = btn.closest('.paper').querySelector('.paper-abstract-wrap');
+      if (wrap.classList.contains('open')) {
+        wrap.classList.remove('open');
+        btn.innerHTML = 'Abstract &#9656;';
+      } else {
+        wrap.classList.add('open');
+        btn.innerHTML = 'Abstract &#9662;';
+      }
+    }
+  </script>
+
+</body>
+</html>
